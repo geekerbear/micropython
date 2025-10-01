@@ -22,8 +22,6 @@ class MQTTCLIENT:
             topic = topic.decode('utf-8')
             msg = msg.decode('utf-8')
             
-            print("MQTT Received:", topic, msg)
-            
             if self.msg_callback is not None:
                 self.msg_callback(topic, msg)
             gc.collect()
